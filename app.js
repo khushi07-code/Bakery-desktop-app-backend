@@ -1,5 +1,4 @@
-const dotenv=require("dotenv");
-dotenv.config();
+require("dotenv").config();
 const express= require("express");
 const app = express();
 app.use(express.json());
@@ -12,7 +11,7 @@ const Category=require("./model/category");
 app.use(cors("*"));
 
 async function main(){
-    await mongoose.connect(MONGO_DB);
+    await mongoose.connect(process.env.MONGO_DB);
 }
 
 main().then((msg) => {
