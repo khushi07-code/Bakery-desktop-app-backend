@@ -50,6 +50,19 @@ app.get("/category",async(req,res)=>{
     res.json(category);
 })
 
+app.post("/loadbill",async(req,res)=>{
+    let billdata=req.body;
+    let result=await Bill.insertMany(billdata);
+    if(result){
+        res.json({message:"Bill loaded successfully"}); 
+    }
+    else{
+        res.sendStatus(404).json({message:"Error in Loading Bill"});
+    }
+})
+
+
 app.listen("3000",()=>{
     console.log("listening.........");
 })
+
