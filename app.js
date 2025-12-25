@@ -8,6 +8,7 @@ const mongoose=require('mongoose');
 const User = require("./model/user");
 const Product =require("./model/product");
 const Category=require("./model/category");
+const Bill=require("./model/bill");
 app.use(cors("*"));
 
 async function main(){

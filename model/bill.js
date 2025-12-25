@@ -43,4 +43,5 @@ const BillSchema = new mongoose.Schema({
   grand_total: Number
 });
 
-module.exports = mongoose.model("Bill", BillSchema);
+const Bill = mongoose.model("Bill", BillSchema);
+module.exports = Bill;
