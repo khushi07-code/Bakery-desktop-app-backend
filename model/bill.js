@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const ProductSchema = require("./product");
+const Product = require("./product");
 
 const BillSchema = new mongoose.Schema({
   bill_no: {
@@ -26,7 +26,10 @@ const BillSchema = new mongoose.Schema({
   cart: {
     type: Map,
     of: {
-      product: ProductSchema,
+      product: {
+        type: mongoose.Types.ObjectId,
+        ref: "Product"
+      },
       qty: {
         type: Number,
         required: true
